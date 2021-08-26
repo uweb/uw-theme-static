@@ -4,7 +4,7 @@
 
 ## What's here
 
-This repo consists of static assets for CSS, JS, and Sass components. Choose your own build tools.
+This repo consists of static assets for CSS, JS, and Sass components. Choose your own build tools or use the dist versions.
 
 ### `assets` folder
 
@@ -52,4 +52,4 @@ The important files to include for all of Bootstrap to work with UW styling:
 
 If you are building components individually or are integrating directly into your project, make sure you are including jQuery, Popper.js, and the Bootstrap.js files. Popper.js is required for tooltips and popovers.
 
-Note: For properly loading font and image assets, it's assumed your stylesheet is in a folder and not the website root (e.g. a `css` folder) and the assets structure is copied as-is to the root of your project. If you need another structure, you may need to adjust and rebuild the Sass files.
+Note: For properly loading font and image assets, it's assumed your stylesheet is in a folder and not the website root (e.g. a `css` folder) and the `assets` folder structure is copied as-is to the root of your project. If you need another structure, you may need to adjust and rebuild the Sass files.
