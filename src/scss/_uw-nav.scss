@@ -311,25 +311,186 @@
 	}
 
 	@media (max-width: 767px) {
-		justify-content: flex-start;
-		align-items: flex-start;
-		padding: 0;
-		background: transparent;
 		border: 0 none;
-		z-index: 99;
-		@include shadow-9;
+		padding: .5rem 0;
+
+
+		ul.navbar-nav {
+			padding: 0;
+
+			li.nav-item {
+				padding: 0;
+
+				&.current-menu-ancestor {
+					a.nav-link { color: $darkgold; }
+				}
+
+				&.dropdown {
+					a {
+						padding: .5rem 10px;
+					}
+				}
+			}
+		}
+
+		.show {
+			border-bottom: 2px solid rgba(0, 0, 0, 0.14);
+		}
+	}
+
+	.container-fluid {
+		@media (min-width: 968px) and (max-width: 1099px) {
+			padding: 0 15px;
+		}
+
+		.navbar-collapse { flex-grow: 0; }
 	}
 
 	.navbar-toggler {
-		padding: 0;
-		background: white;
-		margin: 0.75rem;
+		padding: 0 .75rem 0 .5rem;
+		background: $darkgold;
+		margin: 0;
 		border: 0;
+		position: absolute;
+		top: -45px;
+		right: 0;
+		height: 45px;
+		z-index: 99;
+		border-radius: 0;
+
+		.navbar-toggler-icon {
+			display: block;
+			background-image: none;
+			color: white;
+			width: auto;
+			height: auto;
+			background: none;
+			font-size: 1rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			font-family: $headings, sans-serif;
+		}
+
+		@include haf() {
+			background: white;
+
+			.navbar-toggler-icon {
+				color: $darkgold;
+			}
+
+			&:before { background: white; }
+		}
+
+		&[aria-expanded="true"] {
+			background: white;
+
+			.navbar-toggler-icon {
+				color: $darkgold;
+			}
+
+			&:before { background: white; }
+		}
+
+		&:before {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: -7px;
+			width: 15px;
+			height: 45px;
+			background: $darkgold;
+			border-left: 1px solid $darkgold;
+			z-index: -1;
+			@include skew(-15deg, 0);
+		}
 	}
 
 	.navbar-nav {
 		flex-flow: wrap;
 		margin: 0;
+
+		&.classic-menu-nav {
+			.nav-item {
+				&.dropdown {
+					.dropdown-menu {
+						padding: 10px 30px 10px 0;
+
+						@media (min-width: 768px) {
+							// min-width: 12rem;
+							min-width: 260px;
+						}
+
+						@media (max-width: 767px) {
+							min-width: 100%;
+							padding: 0;
+						}
+
+						.nav-item {
+							border-bottom: 0;
+							// padding: 10px 1rem 0;
+							border-bottom: thin solid #eee;
+							width: 80%;
+							margin: 0 10%;
+							padding: 0;
+
+							&:before {
+								display: none;
+							}
+
+							a {
+								// color: $black;
+								color: #707070;
+								// font-size: 0.95em;
+								// line-height: 1.3;
+								line-height: 28px;
+								text-transform: none;
+								// font-weight: 600;
+								font-weight: normal;
+								// padding: 0 .5rem 10px;
+								padding: 4px 10px;
+								margin: 6px 0;
+								font-family: $headings, sans-serif;
+								font-size: 18px;
+								// border-bottom: thin solid #eee;
+							}
+
+							&:last-child a {
+								border-bottom: 0 none;
+							}
+
+							@include haf() {
+								background: none;
+								a { color: $purple; background: #e7e7e7; }
+							}
+
+							&:focus-within {
+								a { color: $purple; background: #e7e7e7; }
+							}
+
+							&.current_page_item {
+								background: #e7e7e7;
+
+								a { color: $purple; }
+							}
+
+							@media (max-width: 767px) {
+								padding: 0;
+								margin: 0;
+								width: 100%;
+
+								a {
+									padding: 10px;
+									margin: 0;
+									font-size: 0.95em;
+									line-height: 1.2;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 
 		@media (min-width: 768px) {
 			li:first-of-type {
@@ -388,7 +549,7 @@
 
 			&.dropdown {
 				.dropdown-menu {
-					padding: 10px 20% 10px;
+					padding: 10px 0 10px;
 					border-top: 4px solid $purple;
 					border-left: 0 none;
 					border-right: 0 none;
@@ -408,7 +569,7 @@
 						}
 					}
 
-					.dropdown-item, .nav-item {
+					.nav-item {
 						font-family: $headings, sans-serif;
 						font-weight: 600;
 						color: #707070;
@@ -416,6 +577,10 @@
 						line-height: 28px;
 						border-bottom: thin solid #eee;
 						padding: 10px 20px 10px 10px;
+
+						&:before {
+							display: none;
+						}
 
 						&:last-child {
 							border-bottom: 0 none;

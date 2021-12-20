@@ -1,5 +1,4 @@
 /* UW Search */
-
 #mobile-search-select {
 	display: block;
 }
@@ -121,6 +120,19 @@ body.search-open {
 			background-color: #F1F1F1;
 		}
 	}
+
+	.uw-search ::placeholder {
+		color: $black;
+		opacity: 1; /* Firefox */
+	  }
+
+	.uw-search ::-ms-input-placeholder { /* Internet Explorer 10-11 */
+	   color: $black;
+	  }
+
+	  .uw-search ::-ms-input-placeholder { /* Microsoft Edge */
+	   color: $black;
+	  }
 	label.screen-reader {
 		position: absolute;
 		opacity: 0;
@@ -309,6 +321,8 @@ body {
 		}
 	}
 	.uw-search-bar-container {
+
+
 		padding: 0px;
 		div.search-form-wrapper {
 			width: 100%;
@@ -339,10 +353,11 @@ body {
 		form {
 			width: 100%;
 			margin-bottom: 15px;
-			input {
-				border-radius: 0;
-			}
 		}
+		input {
+			border-radius: 0;
+		}
+
 	}
 	body.search-open {
 		.uw-search-bar-container {

@@ -2,9 +2,9 @@
  * Porting breadcrumb CSS from 2014
  */
 .uw-breadcrumbs {
-	padding: 20px 0;
+	padding: 20px 0 0;
 	// margin-bottom: 3px;
-	margin-bottom: -1.5em;
+	// margin-bottom: -1.5em;
 	ul {
 		padding: 0;
 		margin: 0;
@@ -74,11 +74,6 @@
 			display: none;
 		}
 	}
-}
-
-
-.page-template-no-title .uw-breadcrumbs {
-	margin-bottom: unset;
 }
 
 @media only screen and (max-width : 767px) {

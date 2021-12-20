@@ -22,7 +22,7 @@ $link-decoration: underline;
 $link-hover-color: $darkgold;
 
 // all other imports
-@import "../../lib/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 @import "uw-fonts";
 @import "uw-mixins";
 @import "uw-typography";

@@ -80,3 +80,20 @@ html {
 p:empty{
 	display: none;
 }
+
+.entry-header {
+	margin-top: 0 !important;
+}
+
+article {
+	margin-top: 1.5em;
+}
+
+.page-template-no-title {
+	.uw-breadcrumbs {
+		padding-bottom: 1.5em;
+	}
+	article {
+		margin-top: 0;
+	}
+}

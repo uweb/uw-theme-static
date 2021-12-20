@@ -109,7 +109,7 @@
 }
 
 /**
- * Hover, active, and focus statues
+ * Hover, active, and focus states
  * :link and & are optional
  */
  @mixin haf( $states: ( 'h', 'a', 'f' ) ) {
@@ -127,6 +127,8 @@
 			$selectors: append( $selectors, '&:visited', comma );
 		} @else if 'fv' == $state {
 			$selectors: append( $selectors, '&:focus-visible', comma );
+		} @else if 'fw' == $state {
+			$selectors: append( $selectors, '&:focus-within', comma );
 		} @else if '&' == $state {
 			$selectors: append( $selectors, '&', comma );
 		} @else {
